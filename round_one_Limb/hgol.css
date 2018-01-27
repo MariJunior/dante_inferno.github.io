@@ -1,0 +1,353 @@
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/*FOR MY ANIMATION*/
+
+body {
+	margin: 0;
+	padding: 3px;
+	background-color: #000000;
+}
+
+.holder {
+	position: relative;
+	margin: 0 auto;
+	width: 988px;
+	height: 695px;
+}
+
+.element {
+	position: absolute;
+}
+
+a {
+	display: block;
+}
+
+.cloud {
+	z-index: 1;
+  	left: 0px;
+  	top: 0px;
+  	width: 988px;
+  	height: 497px;
+	background-image: url(cloud.png);
+}
+.cloud:after {
+	display: block;
+	z-index: 2;
+	content: "";
+	width: 988px;
+	height: 500px;
+	background: #111811;
+	opacity: 0;
+	-webkit-transition-duration: 3s;
+	     -o-transition-duration: 3s;
+	        transition-duration: 3s;
+	-webkit-transition-timing-function: ease-out;
+	     -o-transition-timing-function: ease-out;
+	        transition-timing-function: ease-out;
+}
+
+.storm {
+	z-index: 10;
+  	left: 22px;
+  	top: -16px;
+  	width: 811px;
+  	height: 100px;
+  	-webkit-transform-origin: 0% 50%;
+  	    -ms-transform-origin: 0% 50%;
+  	        transform-origin: 0% 50%;
+  	-webkit-transform: rotate(27.5deg);
+  	    -ms-transform: rotate(27.5deg);
+  	        transform: rotate(27.5deg);
+  	cursor: pointer;
+}
+.storm:hover ~ .cloud:after {
+	-webkit-animation: flash 3s infinite linear;
+	        animation: flash 3s infinite linear;
+}
+
+.container {
+	z-index: 3;
+	width: 988px;
+	height: 695px;
+	background-image: url(Homer_Goracuy_Ovidiy_Lucar.png);
+}
+
+.leafes {
+	z-index: 5;
+}
+
+.leafes.first {
+  	left: 0px;
+  	top: 301px;
+  	width: 500px;
+  	height: 311px;
+  	background-image: url(leafes_one.png);
+}
+
+.leafes.second {
+  	left: 453px;
+  	top: 420px;
+  	width: 206px;
+  	height: 138px;
+	background-image: url(leafes_two.png);  
+}
+
+.leafes.third {
+  	left: 618px;
+  	top: 103px;
+  	width: 370px;
+  	height: 245px;
+	background-image: url(leafes_three.png);
+}
+
+.leafes:hover {
+	-webkit-animation: shake-little 6s infinite ease-in-out;
+	        animation: shake-little 6s infinite ease-in-out;
+}
+
+.scientist {
+	z-index: 6;
+	opacity: 0;
+	-webkit-transition-property: opacity;
+	-o-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 1s;
+	     -o-transition-duration: 1s;
+	        transition-duration: 1s;
+	-webkit-transition-timing-function: linear;
+	     -o-transition-timing-function: linear;
+	        transition-timing-function: linear;
+}
+
+.scientist.first {
+  	left: 13px;
+  	top: 496px;
+  	width: 64px;
+  	height: 160px;
+	background-image: url(third.png);
+	-webkit-transition-delay: 1s;
+	     -o-transition-delay: 1s;
+	        transition-delay: 1s;
+}
+
+.scientist.second {
+  	left: 63px;
+  	top: 490px;
+  	width: 52px;
+  	height: 174px;
+	background-image: url(second.png);
+	-webkit-transition-delay: 2s;
+	     -o-transition-delay: 2s;
+	        transition-delay: 2s;
+}
+
+.scientist.third {
+  	left: 92px;
+  	top: 510px;
+  	width: 60px;
+  	height: 152px;
+	background-image: url(first.png);
+	-webkit-transition-delay: 3s;
+	     -o-transition-delay: 3s;
+	        transition-delay: 3s;
+}
+
+.scientist.fourth {
+  	left: 131px;
+  	top: 500px;	
+  	width: 60px;
+  	height: 154px;
+	background-image: url(fourth.png);
+	-webkit-transition-delay: 4s;
+	     -o-transition-delay: 4s;
+	        transition-delay: 4s;
+}
+
+.voises {
+	z-index: 7;
+	top: 500px;
+	left: 10px;
+	width: 200px;
+	height: 190px;
+	cursor: pointer;
+}
+.voises:hover ~ .scientist {
+	opacity: 1;
+}
+
+.souls {
+	z-index: 4;
+  	left: 171px;
+  	top: 247px;
+  	width: 366px;
+  	height: 289px;
+	background-image: url(souls.png);
+	opacity: 0;
+	-webkit-transition-property: opacity;
+	-o-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 3s;
+	     -o-transition-duration: 3s;
+	        transition-duration: 3s;
+	-webkit-transition-timing-function: linear;
+	     -o-transition-timing-function: linear;
+	        transition-timing-function: linear;
+}
+
+.hidden_souls {
+    z-index: 5;
+    left: 300px;
+    top: 230px;
+    width: 250px;
+    height: 90px;
+    -webkit-transform-origin: 0% 50%;
+        -ms-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+    -webkit-transform: rotate(53deg);
+        -ms-transform: rotate(53deg);
+            transform: rotate(53deg);
+}
+.hidden_souls:focus ~ .souls {
+	opacity: 1;
+}
+
+.fire {
+	z-index: 5;
+  	left: 2px;
+  	top: 203px;
+  	width: 86px;
+  	height: 168px;
+	background-image: url(fire.png);
+}
+.fire:focus {
+	-webkit-animation: fired 1s infinite linear;
+	        animation: fired 1s infinite linear;
+}
+
+.suicide {
+	z-index: 4;
+  	left: 612px;
+  	top: 27px;
+  	width: 40px;
+  	height: 91px;
+  	background-image: url(men.png);
+}
+
+.hidden_suicide {
+	z-index: 5;
+	left: 612px;
+  	top: 27px;
+  	width: 40px;
+  	height: 91px;
+}
+.hidden_suicide:hover ~ .suicide {
+	-webkit-animation: leap_of_faith 7s infinite ease-in-out;
+	        animation: leap_of_faith 7s infinite ease-in-out;
+}
+
+.to_limb {
+	z-index: 4;
+	width: 50px;
+	height: 50px;
+	right: 10px; 
+	top: 500px;
+	border-radius: 40%;
+	background-color: #9db1cc;
+	opacity: 0.5;
+}
+.to_limb:hover {
+	opacity: 0.9;
+}
+
+.exit {
+	z-index: 4;
+	width: 60px;
+	height: 50px;
+	right: 5px;
+	bottom: 5px;
+	background-image: url(Red_back_sketch.png);
+	opacity: 0.6;
+	-webkit-filter: brightness(60%);
+	        filter: brightness(60%);
+}
+.exit:hover {
+	opacity: 1;
+	-webkit-filter: brightness(100%);
+	        filter: brightness(100%);
+}
+
+/*ANIMATION KEYFRAMES*/
+
+@-webkit-keyframes flash {
+	from {opacity: 0;}
+	10% {opacity: 0.5;}
+	11% {opacity: 0.8;}
+	12% {opacity: 0.5;}
+	20% {opacity: 0.3;}
+	21% {opacity: 0.6;}
+	23% {opacity: 0.3;}
+	30% {opacity: 0.6;}
+	31% {opacity: 0.9;}
+	32% {opacity: 0.6;}
+	40% {opacity: 0.2;}
+	41% {opacity: 0.5;}
+	42% {opacity: 0.2;}
+	50% {opacity: 0.2;}
+	51% {opacity: 0.8;}
+	53% {opacity: 0.2;} 
+}
+
+@keyframes flash {
+	from {opacity: 0;}
+	10% {opacity: 0.5;}
+	11% {opacity: 0.8;}
+	12% {opacity: 0.5;}
+	20% {opacity: 0.3;}
+	21% {opacity: 0.6;}
+	23% {opacity: 0.3;}
+	30% {opacity: 0.6;}
+	31% {opacity: 0.9;}
+	32% {opacity: 0.6;}
+	40% {opacity: 0.2;}
+	41% {opacity: 0.5;}
+	42% {opacity: 0.2;}
+	50% {opacity: 0.2;}
+	51% {opacity: 0.8;}
+	53% {opacity: 0.2;} 
+}
+
+@-webkit-keyframes fired {
+	20% {background-image: url(fire.png);}
+	50% {background-image: url(fired_fire.png);}
+	80% {background-image: url(fire.png);}
+}
+
+@keyframes fired {
+	20% {background-image: url(fire.png);}
+	50% {background-image: url(fired_fire.png);}
+	80% {background-image: url(fire.png);}
+}
+
+@-webkit-keyframes leap_of_faith {
+	0%, 100% {-webkit-transform: translate(0px, 0px) rotate(0deg);transform: translate(0px, 0px) rotate(0deg);}
+	5% {-webkit-transform: translate(-20px, 0px) rotate(0deg);transform: translate(-20px, 0px) rotate(0deg);}
+	/*25% {transform: translate(-153px, 188px) rotate(-190deg);}*/
+	45% {-webkit-transform: translate(-270px, 460px) rotate(-470deg);transform: translate(-270px, 460px) rotate(-470deg);}
+	50% {-webkit-transform: translate(-270px, 460px) rotate(-470deg);transform: translate(-270px, 460px) rotate(-470deg);}
+	70% {-webkit-transform: translate(0px, 390px) rotate(0deg);transform: translate(0px, 390px) rotate(0deg);}
+}
+
+@keyframes leap_of_faith {
+	0%, 100% {-webkit-transform: translate(0px, 0px) rotate(0deg);transform: translate(0px, 0px) rotate(0deg);}
+	5% {-webkit-transform: translate(-20px, 0px) rotate(0deg);transform: translate(-20px, 0px) rotate(0deg);}
+	/*25% {transform: translate(-153px, 188px) rotate(-190deg);}*/
+	45% {-webkit-transform: translate(-270px, 460px) rotate(-470deg);transform: translate(-270px, 460px) rotate(-470deg);}
+	50% {-webkit-transform: translate(-270px, 460px) rotate(-470deg);transform: translate(-270px, 460px) rotate(-470deg);}
+	70% {-webkit-transform: translate(0px, 390px) rotate(0deg);transform: translate(0px, 390px) rotate(0deg);}
+}

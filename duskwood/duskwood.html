@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="duskwood.css">
+	<link rel="stylesheet" type="text/css" href="..//Hover-master/css/hover.css">
+  	<script type="text/javascript" src="..//jquery-3.2.1.min.js"></script>
+  	<!-- FOR MY LOADER -->
+  	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Space+Mono');
+
+		.loader_area {
+			position: fixed;
+		    overflow: hidden;
+		  	left: 0;
+		  	top: 0;
+		  	right:0;
+		  	bottom:0;
+		  	z-index: 100000;
+		  	width: 100%;
+			height: 100%;
+			background-color:#000000;
+		}
+
+		.loader {
+			position: relative;
+			margin: 10px auto;
+			width: 500px;	
+		}
+
+		.round {
+			display: block;
+			margin: 20px auto;
+			color: #E60000;
+			text-align: center;	
+			font-size:42px;
+			letter-spacing: 0.08em;
+			font-family: 'Gloria Hallelujah', cursive;
+		}
+		.round:before {
+			content: "DUSKWOOD";
+		}
+
+		.standart {
+			display: block;
+			margin: 0 auto;
+			color:#FF4529;
+			text-align: center;
+			font-family: 'Space Mono', monospace;
+			font-size: 22px;
+			letter-spacing:0.2em;	
+		}
+		.standart:before {
+			content:"LOADING...";
+		}
+
+		.scheme {
+			margin: 30px auto;
+			padding: 0;
+			list-style: none;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		.scheme li {
+			display: block;
+			margin: 0 auto 3px auto;
+			border: 2px solid #FF2400;
+			border-radius: 7px;
+			height: 25px;	
+			
+			-webkit-animation-duration: 6600ms;	
+			
+			        animation-duration: 6600ms;
+			-webkit-animation-iteration-count: infinite;
+			        animation-iteration-count: infinite;
+			-webkit-animation-timing-function: ease-out;
+			        animation-timing-function: ease-out;
+		}
+		.scheme li:first-child {
+			float:left;
+			margin-left: 23px;
+			width: 175px;
+			background-color: #CC1A00;
+			-webkit-animation-name: duskwood;
+			        animation-name: duskwood;
+		}
+		.scheme li:nth-child(2) {
+			float: right;
+			margin-right: 192px;
+			width: 100px;
+			-webkit-animation-name: hellgate;
+			        animation-name: hellgate;
+		}
+		.scheme li:nth-child(3) {
+			clear:both;
+			width: 450px;
+			-webkit-animation-name: first;
+			        animation-name: first;
+		}
+		.scheme li:nth-child(4) {
+			width: 400px;
+			-webkit-animation-name: second;
+			        animation-name: second;
+		}
+		.scheme li:nth-child(5) {
+			width: 350px;
+			-webkit-animation-name: third;
+			        animation-name: third;
+		}
+		.scheme li:nth-child(6) {
+			width: 300px;
+			-webkit-animation-name: fourth;
+			        animation-name: fourth;
+		}
+		.scheme li:nth-child(7) {
+			width: 250px;
+			-webkit-animation-name: fifth;
+			        animation-name: fifth;
+		}
+		.scheme li:nth-child(8) {
+			width: 200px;
+			-webkit-animation-name: sixth;
+			        animation-name: sixth;
+		}
+		.scheme li:nth-child(9) {
+			width: 150px;
+			-webkit-animation-name: seventh;
+			        animation-name: seventh;
+		}
+		.scheme li:nth-child(10) {
+			width: 100px;
+			-webkit-animation-name: eighth;
+			        animation-name: eighth;
+		}
+		.scheme li:last-child {
+			width: 50px;
+			-webkit-animation-name: ninth;
+			        animation-name: ninth;
+		}
+
+		@-webkit-keyframes duskwood {
+			from {-webkit-transform: translateY(332px);transform: translateY(332px);}
+			9.09% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+
+		@keyframes duskwood {
+			from {-webkit-transform: translateY(332px);transform: translateY(332px);}
+			9.09% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes hellgate {
+			from {-webkit-transform: translateY(332px);transform: translateY(332px);}
+			9.09% {-webkit-transform: translateY(332px);transform: translateY(332px);}
+			18.18% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes hellgate {
+			from {-webkit-transform: translateY(332px);transform: translateY(332px);}
+			9.09% {-webkit-transform: translateY(332px);transform: translateY(332px);}
+			18.18% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes first {
+			from {-webkit-transform: translateY(297px);transform: translateY(297px);}
+			18.18% {-webkit-transform: translateY(297px);transform: translateY(297px);}
+			27.27% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes first {
+			from {-webkit-transform: translateY(297px);transform: translateY(297px);}
+			18.18% {-webkit-transform: translateY(297px);transform: translateY(297px);}
+			27.27% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes second {
+			from {-webkit-transform: translateY(266px);transform: translateY(266px);}
+			27.27% {-webkit-transform: translateY(266px);transform: translateY(266px);}
+			36.36% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes second {
+			from {-webkit-transform: translateY(266px);transform: translateY(266px);}
+			27.27% {-webkit-transform: translateY(266px);transform: translateY(266px);}
+			36.36% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes third {
+			from {-webkit-transform: translateY(233px);transform: translateY(233px);}
+			36.36% {-webkit-transform: translateY(233px);transform: translateY(233px);}
+			45.45% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes third {
+			from {-webkit-transform: translateY(233px);transform: translateY(233px);}
+			36.36% {-webkit-transform: translateY(233px);transform: translateY(233px);}
+			45.45% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes fourth {
+			from {-webkit-transform: translateY(200px);transform: translateY(200px);}
+			45.45% {-webkit-transform: translateY(200px);transform: translateY(200px);}
+			54.54% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes fourth {
+			from {-webkit-transform: translateY(200px);transform: translateY(200px);}
+			45.45% {-webkit-transform: translateY(200px);transform: translateY(200px);}
+			54.54% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes fifth {
+			from {-webkit-transform: translateY(167px);transform: translateY(167px);}
+			54.54% {-webkit-transform: translateY(167px);transform: translateY(167px);}
+			63.63% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes fifth {
+			from {-webkit-transform: translateY(167px);transform: translateY(167px);}
+			54.54% {-webkit-transform: translateY(167px);transform: translateY(167px);}
+			63.63% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes sixth {
+			from {-webkit-transform: translateY(134px);transform: translateY(134px);}
+			63.63% {-webkit-transform: translateY(134px);transform: translateY(134px);}
+			72.72% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes sixth {
+			from {-webkit-transform: translateY(134px);transform: translateY(134px);}
+			63.63% {-webkit-transform: translateY(134px);transform: translateY(134px);}
+			72.72% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes seventh {
+			from {-webkit-transform: translateY(101px);transform: translateY(101px);}
+			72.72% {-webkit-transform: translateY(101px);transform: translateY(101px);}
+			81.81% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes seventh {
+			from {-webkit-transform: translateY(101px);transform: translateY(101px);}
+			72.72% {-webkit-transform: translateY(101px);transform: translateY(101px);}
+			81.81% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes eighth {
+			from {-webkit-transform: translateY(68px);transform: translateY(68px);}
+			81.81% {-webkit-transform: translateY(68px);transform: translateY(68px);}
+			90.90% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes eighth {
+			from {-webkit-transform: translateY(68px);transform: translateY(68px);}
+			81.81% {-webkit-transform: translateY(68px);transform: translateY(68px);}
+			90.90% {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@-webkit-keyframes ninth {
+			from {-webkit-transform: translateY(35px);transform: translateY(35px);}
+			90.90% {-webkit-transform: translateY(35px);transform: translateY(35px);}
+			to {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+		@keyframes ninth {
+			from {-webkit-transform: translateY(35px);transform: translateY(35px);}
+			90.90% {-webkit-transform: translateY(35px);transform: translateY(35px);}
+			to {-webkit-transform: translateY(0px);transform: translateY(0px);}
+		}
+  	</style>
+	<title>Duskwood</title>
+</head>
+<body>
+	<!-- LOADER -->
+	<div class="loader_area">
+		<div class="loader"> 
+			<span class="round"></span>
+			<span class="standart"></span>
+			<ul class="scheme">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		var waiting = new Promise(function (resolve) {
+    		setTimeout(resolve, 6251);
+		});
+	  	$(window).on('load', function () {
+	  		waiting.then(function () {
+	    		var $preloader = $('.loader_area'),
+	        	$loader    = $preloader.find('.loader');
+	    		$loader.fadeOut();
+	    		$preloader.delay(350).fadeOut('slow');
+	    	});
+	  	});
+	</script>
+	<!-- MAIN CONTENT -->
+	<div class="holder">
+		<div class="element sky_water"></div>
+		<div class="element container">
+			<!-- Dante -->
+			<a href="#" onclick="scream()" class="element hidden_dante"></a>
+			<div class="element dante"></div>
+			<audio id="dante_sound" preload="auto">
+				<source src="Scream.mp3" type="audio/mpeg">
+				<source src="Scream.ogg" type="audio/ogg">
+			</audio>		
+			<!-- Vergiliy -->
+			<a href="#" onclick="angel()" class="element hidden_vergiliy"></a>
+			<div class="element vergiliy"></div>
+			<audio id="vergiliy_sound" preload="auto">
+				<source src="Vergiliy.mp3" type="audio/mpeg">
+				<source src="Vergiliy.ogg" type="audio/ogg">
+			</audio>		
+			<!-- Leaves -->
+			<div class="element tree"></div>
+			<div class="element tree_anim"></div>
+			<div class="element flover"></div>
+			<audio id="wind_sound" preload="auto" loop="loop">
+				<source src="Wind.ogg" type="audio/ogg">
+				<source src="Wind.mp3" type="audio/mpeg">
+			</audio>
+			<!-- Wolf -->
+			<div class="element hidden_wolf"></div>
+			<div class="element wolf wolf_tail"></div>
+			<div class="element wolf wolf_eyes"></div>`
+			<audio id="wolf_sound" preload="auto">
+				<source src="Wolfs_growl.mp3" type="audio/mpeg">
+				<source src="Wolfs_growl.ogg" type="audio/ogg">
+			</audio>		
+			<!-- Lion	 -->
+			<div class="element hidden_lion"></div>
+			<div class="element lion lion_tail"></div>
+			<div class="element lion lion_eyes"></div>
+			<audio id="lion_sound" preload="auto">
+				<source src="Lions_growl.mp3" type="audio/mpeg">
+				<source src="Lions_growl.ogg" type="audio/ogg">
+			</audio>		
+			<!-- Lynx -->
+			<div class="element hidden_lynx"></div>
+			<div class="element lynx lynx_tail"></div>
+			<div class="element lynx lynx_eyes"></div>
+			<audio id="lynx_sound" preload="auto">
+				<source src="Lynxs_growl.mp3" type="audio/mpeg">
+				<source src="Lynxs_growl.ogg" type="audio/ogg">
+			</audio>
+			<!-- Stars -->
+			<div class="element stars"></div>
+			<!-- Exit -->
+			<a href="..//schema_inferno_demo.html" class="exit hvr-pulse"></a>
+		</div>
+	</div>
+	<audio id="background_sound" autoplay loop>
+		<source src="Dies_Irae.ogg" type="audio/ogg">
+		<source src="Dies_Irae.mp3" type="audio/mpeg">`
+	</audio>
+	<!-- SCRIPTS -->
+	<script>
+	   	var soundLinkDante = $("#dante_sound")[0];
+	   	function scream() {
+	    	soundLinkDante.play();
+	    };
+	</script>
+	<script>
+	 	var soundLinkAngel = $("#vergiliy_sound")[0];
+	   	function angel() {
+	    	soundLinkAngel.play();
+	    };
+	</script>
+	<script>
+		var soundLinkWind = $("#wind_sound")[0];
+			$(".flover").mouseenter(function() {
+				soundLinkWind.play();
+			});
+			$(".flover").mouseleave(function() {
+				soundLinkWind.pause();
+			});
+			$(".tree").mouseenter(function() {
+				soundLinkWind.play();
+			});
+			$(".tree").mouseleave(function() {
+				soundLinkWind.pause();
+			});
+	</script>
+	<script>
+	    var soundLinkWolf = $("#wolf_sound")[0];
+	        $(".hidden_wolf").mouseenter(function() {
+	           	soundLinkWolf.play();
+	        });
+	        $(".hidden_wolf").mouseleave(function() {
+	       		soundLinkWolf.pause();
+	        });
+	</script>
+	<script>
+	   	var soundLinkLion = $("#lion_sound")[0];
+	        $(".hidden_lion").mouseenter(function() {
+	           	soundLinkLion.play();
+	        });
+	        $(".hidden_lion").mouseleave(function() {
+	       		soundLinkLion.pause();
+	        });
+	</script>
+	<script>
+	    var soundLinkLynx = $("#lynx_sound")[0];
+	        $(".hidden_lynx").mouseenter(function() {
+	           	soundLinkLynx.play();
+	        });
+	        $(".hidden_lynx").mouseleave(function() {
+	       		soundLinkLynx.pause();
+	        });
+		</script>
+	
+</body>
+</html>

@@ -1,0 +1,63 @@
+.main{
+  margin: 0;
+  padding: 0;
+  background-color: #615c5b;
+  /*background-image: url(dante_inferno_backside.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;*/
+}
+
+.divmap {
+  width: 100%;
+}
+
+img[usemap] {
+    border: none;
+    height: auto;
+    /*max-width: 100%;*/
+    width: 100%/*auto*/;
+  }
+
+.go-up,
+.go-down {
+  position: fixed;
+  z-index: 9999;
+  opacity: 0.6;
+    display:none;
+    right: 5px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 50px;
+    height: 30px;
+    border: 4px solid;
+    border-radius: 25%;
+    -webkit-box-shadow: 0 7px 0.3em -0.1em rgba(0,0,6,0.5);
+            box-shadow: 0 7px 0.3em -0.1em rgba(0,0,6,0.5);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    background: url(wood_back.png) no-repeat;
+    background-size: contain;
+    -webkit-filter: brightness(70%);
+            filter: brightness(70%);
+    cursor: pointer;
+}
+
+.go-up {
+    bottom: 90px;
+    border-color: #B8860B;
+    color: #DAA520;
+}
+
+.go-down {
+    bottom: 10px;
+    border-color: #9B2D30;
+    color: #C21A00;
+}
+
+.go-down:hover,
+.go-up:hover {
+    opacity: 1;
+    -webkit-filter: brightness(100%);
+            filter: brightness(100%);
+}

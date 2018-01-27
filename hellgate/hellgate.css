@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css?family=Marck+Script&subset=cyrillic');
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/*FOR MY ANIMATION*/
+
+body {
+	margin: 0;
+	padding: 3px;
+	background-color: #000000;
+	overflow: hidden;
+}
+
+.holder {
+	position: relative;
+	margin: 0 auto;
+	width: 498px;
+	height: 695px;
+	overflow: hidden;
+}
+
+.element {
+	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+ /*What are hidden behind the gates*/
+
+.hell_scene {
+	z-index: 1;
+	width: 497px;
+	height: 695px;
+	background-image: url(hell_scene_d.png);
+}
+
+.top_scene,
+.middle_scene,
+.bottom_scene {
+	z-index: 2;
+}
+
+.top_scene {
+	left: 136px;
+  	top: 82px;
+  	width: 267px;
+  	height: 160px;
+  	background-image: url(top_scene.png);
+}
+
+.middle_scene {
+  	left: 231px;
+  	top: 153px;
+  	width: 176px;
+  	height: 156px;
+	background-image: url(middle_scene.png);
+}
+
+.bottom_scene {
+  	left: 133px;
+  	top: 225px;
+  	width: 223px;
+  	height: 88px;
+	background-image: url(bottom_scene.png);
+}
+
+.rush {
+	z-index: 5;
+	left: 160px;
+	top: 145px;
+	width: 220px;
+	height: 165px;
+}
+.rush:hover ~ .top_scene {
+	-webkit-animation: top_rush 2s infinite linear;
+	        animation: top_rush 2s infinite linear;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+.rush:hover ~ .middle_scene {
+	-webkit-animation: middle_rush 2s infinite linear;
+	        animation: middle_rush 2s infinite linear;	
+    -webkit-animation-delay: 500ms;
+	        animation-delay: 500ms;
+	-webkit-animation-direction: alternate;	
+	        animation-direction: alternate;
+}
+.rush:hover ~ .bottom_scene {
+	-webkit-animation: bottom_rush 1s infinite linear;
+	        animation: bottom_rush 1s infinite linear;
+	-webkit-animation-delay: 1s;
+	        animation-delay: 1s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+
+.boatman {
+	z-index: 2;
+	top: 427px;
+	left: -60px;
+	width: 55px;
+  	height: 46px;
+	background-image: url(boatman_Charon.png);
+	animation: working_boatman 18s infinite linear;
+}
+
+.gradiental {
+	z-index: 3;
+	width: 497px;
+	height: 695px;
+	background: -webkit-gradient(linear, left bottom, right top, from(#222020), color-stop(20%, #3B2B2B), color-stop(40%, #4C2020), color-stop(60%, #511010), color-stop(80%, #7A0000));
+	background: -webkit-linear-gradient(bottom left, #222020 0%, #3B2B2B 20%, #4C2020 40%, #511010 60%, #7A0000 80%);
+	background: -o-linear-gradient(bottom left, #222020 0%, #3B2B2B 20%, #4C2020 40%, #511010 60%, #7A0000 80%);
+	background: linear-gradient(to top right, #222020 0%, #3B2B2B 20%, #4C2020 40%, #511010 60%, #7A0000 80%);
+	-webkit-animation: vail 7s infinite linear;
+	        animation: vail 7s infinite linear;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+
+/*My main content*/
+
+.container {
+	z-index: 4;
+	width: 498px;
+	height: 695px;
+	background-image: url(hellgate_back.png);
+	overflow: hidden;
+}
+
+.hg_dante {
+	z-index: 7;  
+  	left: 0;
+  	top: 745px;
+  	width: 123px;
+  	height: 304px;
+  	background-image: url("dante_hellgate.png");
+  	transition-delay: 1s;
+  	transition-duration: 3s;
+  	transition-timing-function: linear;
+}
+
+.hg_dante_hand {
+	z-index: 5;	
+  	left: 7px;
+  	top: 751px;
+  	width: 48px;
+  	height: 114px;
+  	background-image: url(dande_hellgate_hand.png);
+  	transition-delay: 1s;
+  	transition-duration: 3s;
+  	transition-timing-function: linear;
+}
+
+.hg_vergiliy {
+	z-index: 6;
+  	left: 0;
+  	top: 745px;
+  	width: 167px;
+  	height: 283px;
+  	background-image: url("vergiliy_hellgate.png");
+  	transition-duration: 3s;
+  	transition-timing-function: linear;
+}
+
+.hg_vergiliy_hand {
+	z-index: 5;	
+  	left: 83px;
+  	top: 748px;
+  	width: 48px;
+  	height: 53px;
+  	background-image: url(vergil_hellgate_hand.png); 
+  	transition-duration: 3s;
+  	transition-timing-function: linear;
+}
+
+.emergence {
+	display: block;
+	z-index: 8;
+	top: 500px;
+	left: 160px;
+	width: 200px;
+	height: 100px;
+	cursor: pointer;`
+}
+
+.hell_text {
+	z-index: 5;
+	display: block;
+  	left: 145px;
+  	top: 0px;
+  	padding-top: 5px;
+  	width: 258px;
+  	height: 55px;  	
+  	font-size: 20px;
+  	letter-spacing: 0.1em;
+  	text-decoration: none;
+  	font-style: italic;
+  	font-family: 'Marck Script', cursive;
+  	text-align: center;
+  	color: #330500;
+  	text-shadow: -1px -1px 5px #E71C04;	
+  	opacity: 0;
+  	cursor: pointer;
+}
+.hell_text:focus {
+	-webkit-animation: fire_text 3s infinite linear;
+	        animation: fire_text 3s infinite linear;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+
+.left_tree,
+.right_tree {
+	z-index: 5;
+}
+
+.left_tree {
+  	left: 7px;
+  	top: 0px;
+  	width: 140px;
+  	height: 536px;
+	background-image: url(left_tree.png);
+}
+
+.right_tree {
+  	left: 383px;
+  	top: 32px;
+  	width: 112px;
+  	height: 494px;
+	background-image: url(right_tree.png);
+}
+
+.left_tree:hover,
+.right_tree:hover {
+	animation: shake-little 5s infinite ease-in-out;
+}
+
+.exit {
+	position: absolute;
+	z-index: auto;
+	display: block;
+	bottom: -10px;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	background: url(..//Red_back_sketch.png) no-repeat;
+	background-size: contain;
+	opacity: 0.7;
+	filter: brightness(60%);	
+}
+.exit:hover {
+	opacity: 1;
+	filter: brightness(90%);
+}
+
+/*ANIMATION KEYFRAMES*/
+
+@keyframes vail {
+	from {opacity: 0.1;}
+	20% {opacity: 0.2;}
+	to {opacity: 0.6;}
+}
+
+@keyframes top_rush {
+	from {transform: translateX(0);}
+	20% {transform: translateX(0);}
+	to {transform: translateX(26px);}
+}
+
+@keyframes middle_rush {
+	from {transform: translateX(0);}
+	20% {transform: translateX(0);}
+	to {transform: translateX(-26px);}
+}
+
+@keyframes bottom_rush {
+	from {transform: translateX(0);}
+	20% {transform: translateX(0);}
+	to {transform: translateX(7px);}
+}
+
+@keyframes fire_text {
+	from {opacity: 0; color: #330500; text-shadow: -1px -1px 5px #E71C04;}
+	10% {opacity: 0.1; color: #330500; text-shadow: -1px -1px 5px #E71C04;}
+	to {opacity: 0.9; color: #FF1A2F; text-shadow: -2px -2px 5px #FF341A;}
+}
+
+@keyframes working_boatman {
+	from {transform: translateX(0);}
+	to {transform: translateX(500px);}
+}
+
+/*
+@keyframes dante_comes {
+	to {transform: translate(168px, -425px);}
+}
+
+@keyframes dante_hand_comes {
+	to {transform: translate(168px, -425px);}
+}
+
+@keyframes vergiliy_comes {
+	to {transform: translate(222px, -415px);}
+}
+
+@keyframes vergiliy_hand_comes {
+	to {transform: translate(222px, -415px);}
+}*/

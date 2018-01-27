@@ -1,0 +1,546 @@
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/*FOR MY ANIMATION*/
+
+body {
+	margin: 0;
+	padding: 3px;
+	background-color: #000000;
+}
+
+.holder {
+	position: relative;
+	margin: 0 auto;
+	width: 988px;
+	height: 695px;
+}
+
+.element {
+	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.sky_water {
+	z-index: 1;
+	width: 988px;
+	height: 695px;
+	background-image: url(sumerechnuy_les_back_exp.png);
+}
+
+.sky_water::before,
+.sky_water::after {
+	content: "";
+	z-index: 2;
+	display: block;
+	left: 0;
+	width: 988px;
+}
+.sky_water::before {	
+	top: 0;	
+	height: 388px;
+	background: -webkit-radial-gradient(462px 388px, ellipse, #fecd71, #d98594, #6396d8, #7a5c9c);
+	background: -o-radial-gradient(462px 388px, ellipse, #fecd71, #d98594, #6396d8, #7a5c9c);
+	background: radial-gradient(ellipse at 462px 388px, #fecd71, #d98594, #6396d8, #7a5c9c);
+	-webkit-animation: sun_sky 12000ms infinite;
+	        animation: sun_sky 12000ms infinite;	
+	-webkit-animation-direction: alternate;	
+	        animation-direction: alternate;
+}
+
+.sky_water::after {
+	top: 388px;
+	height: 307px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#7a5c9c), color-stop(3%, #fec5b9),  color-stop(15.15%, #dc8998), color-stop(29.443%, #718ec4), color-stop(45.459%, #787fa1));
+	background: -webkit-linear-gradient(top, #7a5c9c 0%, #fec5b9 3%,  #dc8998 15.15%, #718ec4 29.443%, #787fa1 45.459%);
+	background: -o-linear-gradient(top, #7a5c9c 0%, #fec5b9 3%,  #dc8998 15.15%, #718ec4 29.443%, #787fa1 45.459%);
+	background: linear-gradient(to bottom, #7a5c9c 0%, #fec5b9 3%,  #dc8998 15.15%, #718ec4 29.443%, #787fa1 45.459%);
+	-webkit-animation: sun_water 12000ms infinite;
+	        animation: sun_water 12000ms infinite;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+
+.container {
+	z-index: 3;
+	width: 988px;
+	height: 695px;
+	background-image: url(sumerechnuy_les_fl.png);
+}
+
+/*VERGILIY*/
+
+.vergiliy {
+	z-index: 5;
+ 	left: 180px;
+ 	top: -447px;
+	width: 322px;
+ 	height: 447px;
+  	background-image: url(vergiliy.png);
+
+  	-webkit-transition-duration: 5s;
+
+  	     -o-transition-duration: 5s;
+
+  	        transition-duration: 5s; 
+}
+
+.hidden_vergiliy {
+	z-index: 8;
+	display: block;
+	left: 100px;
+	top: 126px;
+	width: 270px;
+	height: 120px;
+}
+
+.hidden_vergiliy:focus ~ .vergiliy {
+	-webkit-transform: translate(-90px,523px);
+	    -ms-transform: translate(-90px,523px);
+	        transform: translate(-90px,523px);
+}
+
+/*DANTE*/
+
+.dante {
+  	z-index: 6;
+  	left: 146px;
+  	top: 233px;
+  	width: 406px;
+  	height: 429px;
+  	background-image: url(dante_h.png);
+}
+
+.dante::before, 
+.dante::after {
+	content: "";
+	position: absolute;
+	z-index: 7;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.dante::before {
+	left: 5px;
+	top: 17px;
+	width: 137px;
+  	height: 142px;
+  	background-image: url(l_h.png);
+
+  	-webkit-transform-origin: 86% 82%;
+
+  	    -ms-transform-origin: 86% 82%;
+
+  	        transform-origin: 86% 82%;
+  	-webkit-transform: rotate(-40deg);
+  	    -ms-transform: rotate(-40deg);
+  	        transform: rotate(-40deg);
+  	-webkit-transition-duration: 2s;
+  	     -o-transition-duration: 2s;
+  	        transition-duration: 2s;
+}
+
+.dante::after {
+	left: 182px;
+	top: 5px;
+  	width: 123px;
+  	height: 171px;
+  	background-image: url(r_h.png);
+
+  	-webkit-transform-origin: 9% 76.6%;
+
+  	    -ms-transform-origin: 9% 76.6%;
+
+  	        transform-origin: 9% 76.6%;
+  	-webkit-transform: rotate(60deg);
+  	    -ms-transform: rotate(60deg);
+  	        transform: rotate(60deg);
+  	-webkit-transition-delay: 150ms;
+  	     -o-transition-delay: 150ms;
+  	        transition-delay: 150ms;
+  	-webkit-transition-duration: 2s;
+  	     -o-transition-duration: 2s;
+  	        transition-duration: 2s;
+}
+
+.hidden_dante {
+	z-index: 9;
+	display: block;
+	left: 270px;
+	top: 350px;
+	width: 100px;
+	height: 240px;
+}
+
+.hidden_dante:focus ~ .dante::before {
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	        transform: rotate(0deg);
+}
+.hidden_dante:focus ~ .dante::after {
+	-webkit-transform: rotate(0deg);
+	    -ms-transform: rotate(0deg);
+	        transform: rotate(0deg);
+}
+
+.flover,
+/*.tree,*/
+.wolf,
+.lion,
+.lynx,
+.stars {
+	z-index: 4;
+}
+
+/*LEAVES*/
+
+.tree {
+	z-index: 5;
+	left: 272px;
+  	top: 0px;
+  	width: 716px;
+  	height: 164px;
+  	background-image: url("tree_leaver_static.png");
+}
+.tree_anim {
+	z-index: 4;
+	left: 295px;
+  	top: 0;
+  	width: 670px;
+  	height: 217px;
+	background-image: url("tree_leaves.png");
+}
+
+.tree:hover ~ .tree_anim {
+	-webkit-animation: wind_tree 3s infinite;
+	        animation: wind_tree 3s infinite;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+
+.flover {
+  	left: 520px;
+  	top: 383px;
+  	width: 99px;
+  	height: 57px;
+	background-image: url(flover_leaves.png);
+	-webkit-transform-origin: 90% 75%;
+	    -ms-transform-origin: 90% 75%;
+	        transform-origin: 90% 75%;
+}
+
+.flover:hover {
+	-webkit-animation: wind_flover 5s infinite;
+	        animation: wind_flover 5s infinite;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+
+/*WOLF*/
+
+.wolf_eyes {
+  	left: 577px;
+  	top: 212px;
+  	width: 13px;
+  	height: 12px;
+  	background-image: url(wolf_eyes.png);
+}
+
+.wolf_tail {
+  	left: 817px;
+  	top: 115px;
+  	width: 94px;
+  	height: 101px;  
+  	background-image: url(wolf_tail.png);
+  	-webkit-transform-origin: 0 100%;
+  	    -ms-transform-origin: 0 100%;
+  	        transform-origin: 0 100%;
+}
+
+.hidden_wolf {
+	left: 605px;
+	top: 185px;
+	width: 210px;
+	height: 75px;
+}
+
+.hidden_wolf:hover ~ .wolf_eyes {
+	-webkit-animation: shining_wolf 3s infinite linear;
+	        animation: shining_wolf 3s infinite linear;	
+}
+.hidden_wolf:hover ~ .wolf_tail {
+	-webkit-animation: shaking_wolf 10s infinite ease-in-out;
+	        animation: shaking_wolf 10s infinite ease-in-out;
+}
+
+/*LION*/
+
+.lion_eyes {
+  	left: 615px;
+  	top: 328px;
+  	width: 57px;
+  	height: 20px;
+  	background-image: url(lion_eyes.png);
+}
+
+
+.lion_tail {
+   	left: 890px;
+  	top: 133px;
+ 	width: 86px;
+  	height: 225px;
+  	background-image: url(lion_tail.png);
+	-webkit-transform-origin: 0 100%;
+	    -ms-transform-origin: 0 100%;
+	        transform-origin: 0 100%;
+}
+
+.hidden_lion {
+	left: 680px;
+	top: 320px;
+	width: 210px;
+	height: 75px;
+}
+
+.hidden_lion:hover ~ .lion_eyes {
+	-webkit-animation: shining_lion 5s infinite linear;
+	        animation: shining_lion 5s infinite linear;
+}
+.hidden_lion:hover ~ .lion_tail {
+	-webkit-animation: shaking_lion 15s infinite ease-in-out;
+	        animation: shaking_lion 15s infinite ease-in-out;
+}
+
+/*LYNX*/
+
+.lynx_eyes {
+  	left: 578px;
+  	top: 514px;
+  	width: 37px;
+  	height: 47px;
+  	background-image: url(lynx_eyes.png);
+}
+
+.lynx_tail {
+  	left: 840px;
+  	top: 496px;
+  	width: 130px;
+  	height: 122px;  
+  	background-image: url(lynx_tail.png);
+  	-webkit-transform-origin: 0 0;
+  	    -ms-transform-origin: 0 0;
+  	        transform-origin: 0 0;
+}
+
+.hidden_lynx {
+	left: 615px;
+	top: 500px;
+	width: 230px;
+	height: 90px;
+}
+
+.hidden_lynx:hover ~ .lynx_eyes {
+	-webkit-animation: shining_lynx 5s infinite linear;
+	        animation: shining_lynx 5s infinite linear;
+}
+.hidden_lynx:hover ~ .lynx_tail {
+	-webkit-animation: shaking_lynx 20s infinite ease-in-out;
+	        animation: shaking_lynx 20s infinite ease-in-out;
+}
+
+/*STARS*/
+
+.stars {
+ 	left: 63px;
+  	top: 93px;
+  	width: 103px;
+  	height: 278px;
+  	background-image: url(stars.png);
+
+  	-webkit-animation: shining_stars 3500ms infinite linear;
+
+  	        animation: shining_stars 3500ms infinite linear;
+}
+
+/*EXIT*/
+
+.exit {
+	position: absolute;
+	z-index: auto;
+	display: block;
+	bottom: 0;
+	left: 0;
+	width: 60px;
+	height: 60px;
+	background: url(..//Green_back_sketch.png) no-repeat;
+	background-size: contain;
+	opacity: 0.7;
+	-webkit-filter: brightness(60%);
+	        filter: brightness(60%);	
+}
+
+.exit:hover {
+	opacity: 1;
+	-webkit-filter: brightness(90%);
+	        filter: brightness(90%);
+}
+
+
+/*KEYFRAMES*/
+
+@-webkit-keyframes sun_sky {
+	from {opacity: 0;}
+	to {opacity: 0.7;}
+}
+
+@keyframes sun_sky {
+	from {opacity: 0;}
+	to {opacity: 0.7;}
+}
+
+@-webkit-keyframes sun_water {
+	from {opacity: 0;}
+	to {opacity: 0.7;}
+}
+
+@keyframes sun_water {
+	from {opacity: 0;}
+	to {opacity: 0.7;}
+}
+
+@-webkit-keyframes wind_tree {
+	from {-webkit-transform: translate(0,0) rotate(0deg);transform: translate(0,0) rotate(0deg);}
+	to {-webkit-transform: translate(-10px,17px) rotate(-1.5deg);transform: translate(-10px,17px) rotate(-1.5deg);}
+}
+
+@keyframes wind_tree {
+	from {-webkit-transform: translate(0,0) rotate(0deg);transform: translate(0,0) rotate(0deg);}
+	to {-webkit-transform: translate(-10px,17px) rotate(-1.5deg);transform: translate(-10px,17px) rotate(-1.5deg);}
+}
+
+@-webkit-keyframes wind_flover {
+	from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	to {-webkit-transform: rotate(12deg);transform: rotate(12deg);}
+}
+
+@keyframes wind_flover {
+	from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	to {-webkit-transform: rotate(12deg);transform: rotate(12deg);}
+}
+
+@-webkit-keyframes shining_wolf {
+	from {background-image: url(wolf_eyes.png);}
+	50% {background-image: url(shine_wolf_eyes.png);}
+	to {background-image: url(wolf_eyes.png);}
+}
+
+@keyframes shining_wolf {
+	from {background-image: url(wolf_eyes.png);}
+	50% {background-image: url(shine_wolf_eyes.png);}
+	to {background-image: url(wolf_eyes.png);}
+}
+
+@-webkit-keyframes shaking_wolf {
+	12.5% {-webkit-transform: rotate(12deg);transform: rotate(12deg);}
+	25% {-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
+	37.5% {-webkit-transform: rotate(9deg);transform: rotate(9deg);}
+	50% {-webkit-transform: rotate(-7deg);transform: rotate(-7deg);}
+	62.5% {-webkit-transform: rotate(11deg);transform: rotate(11deg);}
+	75% {-webkit-transform: rotate(-9deg);transform: rotate(-9deg);}
+	87.5% {-webkit-transform: rotate(8deg);transform: rotate(8deg);}
+	100% {-webkit-transform: rotate(-6deg);transform: rotate(-6deg);}
+}
+
+@keyframes shaking_wolf {
+	12.5% {-webkit-transform: rotate(12deg);transform: rotate(12deg);}
+	25% {-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
+	37.5% {-webkit-transform: rotate(9deg);transform: rotate(9deg);}
+	50% {-webkit-transform: rotate(-7deg);transform: rotate(-7deg);}
+	62.5% {-webkit-transform: rotate(11deg);transform: rotate(11deg);}
+	75% {-webkit-transform: rotate(-9deg);transform: rotate(-9deg);}
+	87.5% {-webkit-transform: rotate(8deg);transform: rotate(8deg);}
+	100% {-webkit-transform: rotate(-6deg);transform: rotate(-6deg);}
+}
+
+@-webkit-keyframes shining_lion {
+	from {background-image: url(lion_eyes.png);}
+	50% {background-image: url(shine_lion_eyes.png);}
+	to {background-image: url(lion_eyes.png);}
+}
+
+@keyframes shining_lion {
+	from {background-image: url(lion_eyes.png);}
+	50% {background-image: url(shine_lion_eyes.png);}
+	to {background-image: url(lion_eyes.png);}
+}
+
+@-webkit-keyframes shaking_lion {
+	12.5% {-webkit-transform: rotate(12deg);transform: rotate(12deg);}
+	25% {-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
+	37.5% {-webkit-transform: rotate(9deg);transform: rotate(9deg);}
+	50% {-webkit-transform: rotate(-7deg);transform: rotate(-7deg);}
+	62.5% {-webkit-transform: rotate(11deg);transform: rotate(11deg);}
+	75% {-webkit-transform: rotate(-9deg);transform: rotate(-9deg);}
+	87.5% {-webkit-transform: rotate(8deg);transform: rotate(8deg);}
+	100% {-webkit-transform: rotate(-6deg);transform: rotate(-6deg);}
+}
+
+@keyframes shaking_lion {
+	12.5% {-webkit-transform: rotate(12deg);transform: rotate(12deg);}
+	25% {-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
+	37.5% {-webkit-transform: rotate(9deg);transform: rotate(9deg);}
+	50% {-webkit-transform: rotate(-7deg);transform: rotate(-7deg);}
+	62.5% {-webkit-transform: rotate(11deg);transform: rotate(11deg);}
+	75% {-webkit-transform: rotate(-9deg);transform: rotate(-9deg);}
+	87.5% {-webkit-transform: rotate(8deg);transform: rotate(8deg);}
+	100% {-webkit-transform: rotate(-6deg);transform: rotate(-6deg);}
+}
+
+@-webkit-keyframes shining_lynx {
+	from {background-image: url(lynx_eyes.png);}
+	50% {background-image: url(shine_lynx_eyes.png);}
+	to {background-image: url(lynx_eyes.png);}
+}
+
+@keyframes shining_lynx {
+	from {background-image: url(lynx_eyes.png);}
+	50% {background-image: url(shine_lynx_eyes.png);}
+	to {background-image: url(lynx_eyes.png);}
+}
+
+@-webkit-keyframes shaking_lynx {
+	12.5% {-webkit-transform: rotate(6deg);transform: rotate(6deg);}
+	25% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+	37.5% {-webkit-transform: rotate(4.5deg);transform: rotate(4.5deg);}
+	50% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+	62.5% {-webkit-transform: rotate(5.5deg);transform: rotate(5.5deg);}
+	75% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+	87.5% {-webkit-transform: rotate(4deg);transform: rotate(4deg);}
+	100% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+}
+
+@keyframes shaking_lynx {
+	12.5% {-webkit-transform: rotate(6deg);transform: rotate(6deg);}
+	25% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+	37.5% {-webkit-transform: rotate(4.5deg);transform: rotate(4.5deg);}
+	50% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+	62.5% {-webkit-transform: rotate(5.5deg);transform: rotate(5.5deg);}
+	75% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+	87.5% {-webkit-transform: rotate(4deg);transform: rotate(4deg);}
+	100% {-webkit-transform: rotate(-2deg);transform: rotate(-2deg);}
+}
+
+@-webkit-keyframes shining_stars {
+	from {background-image: url(stars.png);}
+	50% {background-image: url(shine_stars.png);}
+	to {background-image: url(stars.png);}
+}
+
+@keyframes shining_stars {
+	from {background-image: url(stars.png);}
+	50% {background-image: url(shine_stars.png);}
+	to {background-image: url(stars.png);}
+}

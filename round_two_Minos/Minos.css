@@ -1,0 +1,566 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/*FOR MY ANIMATION*/
+
+body {
+  margin: 0;
+  padding: 3px;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.holder {
+  position: relative;
+  margin: 0 auto;
+    width: 978px;
+  height: 695px;
+  overflow: hidden;
+}
+
+.element {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/*Main Content*/
+
+.lava_and_sky {
+  z-index: 1;
+  width: 978px;
+  height: 695px;
+  background-image: url(Minos_background.png);
+}
+
+.lava_and_sky:before,
+.lava_and_sky:after {
+  content: "";
+  z-index: 3;
+  display: inline-block;
+  top: 0;
+  width: 489px;
+  height: 695px;
+}
+
+.lava_and_sky:before {  
+  float: left;
+  background: -webkit-gradient(linear, left top, left bottom, from(#c60035), color-stop(25%, #d80013), color-stop(50%, #62001d), color-stop(75%, #3A0313));
+  background: -webkit-linear-gradient(top, #c60035 0%, #d80013 25%, #62001d 50%, #3A0313 75%);
+  background: -o-linear-gradient(top, #c60035 0%, #d80013 25%, #62001d 50%, #3A0313 75%);
+  background: linear-gradient(to bottom, #c60035 0%, #d80013 25%, #62001d 50%, #3A0313 75%);
+  -webkit-animation: gradiental_anim 9s infinite;
+          animation: gradiental_anim 9s infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+}
+
+.lava_and_sky:after {
+  float: right;
+  background: -webkit-gradient(linear, left top, left bottom, from(#C81919), color-stop(25%, #9F1414), color-stop(50%, #62001d), color-stop(75%, #5B1010));
+  background: -webkit-linear-gradient(top, #C81919 0%, #9F1414 25%, #62001d 50%, #5B1010 75%);
+  background: -o-linear-gradient(top, #C81919 0%, #9F1414 25%, #62001d 50%, #5B1010 75%);
+  background: linear-gradient(to bottom, #C81919 0%, #9F1414 25%, #62001d 50%, #5B1010 75%);
+  -webkit-animation: gradiental_anim 9s infinite;
+          animation: gradiental_anim 9s infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.lava_head {
+  z-index: 2;
+  -webkit-animation: pop-up 5s infinite;
+          animation: pop-up 5s infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.lava_head.one {  
+  left: 885px;
+    top: 395px;
+    width: 40px;
+    height: 40px;
+    background-image: url("lava_hand.png");
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+}
+
+.lava_head.two {
+    left: 899px;
+    top: 582px;
+    width: 52px;
+    height: 54px;
+    background-image: url("lava_hand_two.png");
+}
+
+.container {
+  z-index: 4;
+  width: 978px; 
+  height: 695px;
+  background-image: url(Minos_main_scene.png);  
+}
+
+.face {
+  z-index: 5; 
+  -webkit-animation-iteration-count: infinite;  
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+
+.face.one {
+    /*left: 342px; - такой должна быть координата после анимации, когда голова уже появилась (<-)*/
+    left: 400px;
+    top: 110px;
+    width: 71px;
+    height: 110px;
+    background-image: url(face_one.png);
+}
+
+.face.two {
+    /*left: 332px; - такой должна быть координата после анимации, когда голова уже появилась (<-)*/
+    left: 450px;
+    top: 31px;
+    width: 91px;
+    height: 110px;
+}
+
+.face.three_four {
+    /*left: 643px; - такой должна быть координата после анимации, когда голова уже появилась (->)*/
+    left: 530px;
+    top: 6px;
+    width: 106px;
+    height: 184px;
+    background-image: url(face_three_four.png);
+}
+/*Лица будут появляться при наведении на Миноса*/
+
+.minos {
+  z-index: 6;
+  display: block;
+    left: 334px;
+    top: 2px;
+    width: 322px;
+    height: 504px;
+    background-image: url(Minos_throne.png);
+}
+
+.minos:hover ~ .face.one {
+    -webkit-animation-name: display_one;
+            animation-name: display_one;
+    -webkit-animation-delay: 500ms;
+            animation-delay: 500ms;
+}
+
+.minos:hover ~ .face.two {
+    background-image: url(face_two.png);
+    -webkit-animation-name: display_two;
+            animation-name: display_two;
+}
+
+.minos:hover ~ .face.three_four {
+    -webkit-animation-name: display_three_four;
+            animation-name: display_three_four;
+    -webkit-animation-delay: 1500ms;
+            animation-delay: 1500ms;
+}
+
+.minos_left_hand,
+.minos_right_hand {
+  z-index: 7;
+}
+
+.minos_left_hand {
+  left: 374px;
+    top: 7px;
+    width: 104px;
+    height: 226px;
+  background-image: url(Minos_left_hand.png);
+  -webkit-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.minos_right_hand {
+    left: 582px;
+    top: 165px;
+    width: 140px;
+    height: 212px;
+    background-image: url(Minos_right_hand.png);
+    -webkit-transform-origin: 0% 50%;
+        -ms-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1; 
+  -webkit-animation-timing-function: linear;  
+          animation-timing-function: linear;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.minos:focus ~ .minos_left_hand {
+  -webkit-animation-name: swinging_a_hand;
+          animation-name: swinging_a_hand;
+}
+
+.minos:focus ~ .minos_right_hand {
+  -webkit-animation-name: swinging_a_spear;
+          animation-name: swinging_a_spear;
+}
+
+.flash {
+  z-index: 5;
+  opacity: 0;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+
+.flash.left_bottom {
+    left: 299px;
+    top: 280px;
+    width: 80px;
+    height: 94px;
+    background-image: url(flash_left_bottom.png);
+    -webkit-animation-delay: 500ms;
+            animation-delay: 500ms;
+}
+
+.flash.left_middle {
+    left: 217px;
+    top: 222px;
+    width: 111px;
+    height: 124px;
+  background-image: url(flash_left_middle.png);
+}
+
+.flash.left_top {
+    left: 183px;
+    top: 0px;
+    width: 106px;
+    height: 249px;
+  background-image: url(flash_left_top.png);
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+
+.flash.right_bottom {
+    left: 726px;
+    top: 171px;
+    width: 104px;
+    height: 93px;
+  background-image: url(flash_right_bottom.png);
+}
+
+.flash.right_top {
+    left: 786px;
+    top: 70px;
+    width: 90px;
+    height: 106px;
+    background-image: url(flash_right_top.png);
+    -webkit-animation-delay: 700ms;
+            animation-delay: 700ms;
+}
+
+.minos:focus ~ .flash {
+  -webkit-animation-name: flash_light;
+          animation-name: flash_light;
+}
+
+.emergence {
+    display: block;
+    z-index: 15;
+    top: 541px;
+    left: 50px;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.dante {
+  z-index: 10;
+    /*left: -5px;
+    top: 467px; - эти координаты должны быть, когда Данте уже появится в кадре*/
+    left: -210px;
+    top: 477px;
+    width: 204px;
+    height: 258px;
+  background-image: url(dantes.png);
+  -webkit-transition-delay: 1s;
+       -o-transition-delay: 1s;
+          transition-delay: 1s;
+  -webkit-transition-duration: 3s;
+       -o-transition-duration: 3s;
+          transition-duration: 3s;
+    -webkit-transition-timing-function: linear;
+         -o-transition-timing-function: linear;
+            transition-timing-function: linear;
+
+}
+
+.vergiliy {
+  z-index: 11;
+    /*left: 35px;
+    top: 354px; - эти координаты должны быть, когда Вергилий уже появится в кадре*/
+    left: -351px;
+    top: 370px;
+    width: 316px;
+    height: 342px;
+  background-image: url(vegriliy.png);
+  -webkit-transition-duration: 3s;
+       -o-transition-duration: 3s;
+          transition-duration: 3s;
+    -webkit-transition-timing-function: linear;
+         -o-transition-timing-function: linear;
+            transition-timing-function: linear;
+}
+
+.sinners {
+  z-index: 12;
+  -webkit-transition-property: backgroung-image;
+  -o-transition-property: backgroung-image;
+  transition-property: backgroung-image;
+  -webkit-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+.sinners.left {
+    left: 61px;
+    top: 504px;
+    width: 382px;
+    height: 183px;
+    background-image: url(left_sinner.png);
+}
+
+.sinners.middle {
+    left: 263px;
+    top: 369px;
+    width: 422px;
+    height: 320px;
+  background-image: url(middle_sinner.png);
+}
+
+.sinners.right {
+    left: 446px;
+    top: 411px;
+    width: 514px;
+    height: 276px;
+  background-image: url(right_sinners.png);
+}
+
+.hidden_sinners {
+  z-index: 13;
+}
+
+.hidden_sinners.left {
+  left: 245px;
+    top: 500px;
+    width: 80px;
+    height: 220px;
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+            transform: rotate(60deg);
+}
+
+.hidden_sinners.middle {
+    left: 420px;
+    top: 460px;
+    width: 80px;
+    height: 240px;
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-transform: rotate(40deg);
+        -ms-transform: rotate(40deg);
+            transform: rotate(40deg);
+}
+
+.hidden_sinners.right {
+    left: 616px;
+    top: 422px;
+    width: 140px;
+    height: 223px;
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+            transform: rotate(20deg);
+}
+.hidden_sinners.left:hover ~ .sinners.left {
+  background-image: url(shining_left_sinner.png);
+}
+
+.hidden_sinners.middle:hover ~ .sinners.middle {
+  background-image: url(shining_middle_sinner.png);
+}
+
+.hidden_sinners.right:hover ~ .sinners.right {
+  background-image: url(shining_right_sinners.png);
+}
+
+.left_pair {
+  z-index: 15;
+    left: 58px;
+    top: 31px;
+    width: 303px;
+    height: 300px;
+    background-image: url(left_pair.png);
+}
+
+.right_pair {
+  z-index: 15;
+    left: 728px;
+    top: 110px;
+    width: 202px;
+    height: 290px;
+    background-image: url(right_pair.png);
+}
+
+/*----------------------------------------------------*/
+/*KEYFRAMES*/
+
+@-webkit-keyframes gradiental_anim {
+  from {opacity: 0;}
+  to {opacity: 0.7;}
+}
+
+@keyframes gradiental_anim {
+  from {opacity: 0;}
+  to {opacity: 0.7;}
+}
+
+@-webkit-keyframes pop-up {
+  from {opacity: 0; -webkit-transform: translateY(0px); transform: translateY(0px);}
+  50% {opacity: 0.8; -webkit-transform: translateY(0px); transform: translateY(0px);}
+  to {opacity: 0.8; -webkit-transform: translateY(-5px); transform: translateY(-5px);}
+}
+
+@keyframes pop-up {
+  from {opacity: 0; -webkit-transform: translateY(0px); transform: translateY(0px);}
+  50% {opacity: 0.8; -webkit-transform: translateY(0px); transform: translateY(0px);}
+  to {opacity: 0.8; -webkit-transform: translateY(-5px); transform: translateY(-5px);}
+}
+
+@-webkit-keyframes display_one {
+  from {opacity: 0; -webkit-transform: translateX(0px); transform: translateX(0px);}
+  to {opacity: 1; -webkit-transform: translateX(-58px); transform: translateX(-58px);}
+}
+
+@keyframes display_one {
+  from {opacity: 0; -webkit-transform: translateX(0px); transform: translateX(0px);}
+  to {opacity: 1; -webkit-transform: translateX(-58px); transform: translateX(-58px);}
+}
+
+@-webkit-keyframes display_two {
+  from {opacity: 0; -webkit-transform: translateX(0px); transform: translateX(0px);}
+  to {opacity: 1; -webkit-transform: translateX(-118px); transform: translateX(-118px);}
+}
+
+@keyframes display_two {
+  from {opacity: 0; -webkit-transform: translateX(0px); transform: translateX(0px);}
+  to {opacity: 1; -webkit-transform: translateX(-118px); transform: translateX(-118px);}
+}
+
+@-webkit-keyframes display_three_four {
+  from {opacity: 0; -webkit-transform: translateX(0px); transform: translateX(0px);}
+  to {opacity: 1; -webkit-transform: translateX(113px); transform: translateX(113px);}
+}
+
+@keyframes display_three_four {
+  from {opacity: 0; -webkit-transform: translateX(0px); transform: translateX(0px);}
+  to {opacity: 1; -webkit-transform: translateX(113px); transform: translateX(113px);}
+}
+
+@-webkit-keyframes swinging_a_hand {
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+  50% {-webkit-transform: rotate(-3deg);transform: rotate(-3deg);}
+  to {-webkit-transform: rotate(3deg);transform: rotate(3deg);}
+}
+
+@keyframes swinging_a_hand {
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+  50% {-webkit-transform: rotate(-3deg);transform: rotate(-3deg);}
+  to {-webkit-transform: rotate(3deg);transform: rotate(3deg);}
+}
+
+@-webkit-keyframes swinging_a_spear{
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+  40% {-webkit-transform: rotate(-13deg);transform: rotate(-13deg);}
+  60% {-webkit-transform: rotate(-13deg);transform: rotate(-13deg);}
+  to {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+
+@keyframes swinging_a_spear{
+  from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+  40% {-webkit-transform: rotate(-13deg);transform: rotate(-13deg);}
+  60% {-webkit-transform: rotate(-13deg);transform: rotate(-13deg);}
+  to {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+
+@-webkit-keyframes flash_light {
+  from {opacity: 0;}
+  10% {opacity: 0.5;}
+  11% {opacity: 0.8;}
+  12% {opacity: 0.5;}
+  20% {opacity: 0.3;}
+  21% {opacity: 0.6;}
+  23% {opacity: 0.3;}
+  30% {opacity: 0.6;}
+  31% {opacity: 0.9;}
+  32% {opacity: 0.6;}
+  40% {opacity: 0.2;}
+  41% {opacity: 0.5;}
+  42% {opacity: 0.2;}
+  50% {opacity: 0.2;}
+  51% {opacity: 0.8;}
+  53% {opacity: 0.2;} 
+}
+
+@keyframes flash_light {
+  from {opacity: 0;}
+  10% {opacity: 0.5;}
+  11% {opacity: 0.8;}
+  12% {opacity: 0.5;}
+  20% {opacity: 0.3;}
+  21% {opacity: 0.6;}
+  23% {opacity: 0.3;}
+  30% {opacity: 0.6;}
+  31% {opacity: 0.9;}
+  32% {opacity: 0.6;}
+  40% {opacity: 0.2;}
+  41% {opacity: 0.5;}
+  42% {opacity: 0.2;}
+  50% {opacity: 0.2;}
+  51% {opacity: 0.8;}
+  53% {opacity: 0.2;} 
+}

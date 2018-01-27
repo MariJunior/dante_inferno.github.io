@@ -1,0 +1,285 @@
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/*FOR MY ANIMATION*/
+
+body {
+	margin: 0;
+	padding: 3px;
+	background-color: #000000;
+	overflow: hidden;
+}
+
+.holder {
+	position: relative;
+	margin: 0 auto;
+	width: 496px;
+	height: 695px;
+}
+
+.element {
+	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/*Main Content*/
+
+.sky_and_water {
+	z-index: 1;
+	width: 495px;
+	height: 656px;
+	background-image: url(full_sky_and_water.png);
+}
+
+.sky_and_water:before,
+.sky_and_water:after {
+	content: "";
+	z-index: 2;
+	display: block;
+	left: 0;
+	width: 495px;
+}
+.sky_and_water:before {	
+	top: 0;	
+	height: 237px;
+	background: -webkit-radial-gradient(0px 0px, ellipse, #94001c, #1e0805, #c60035);
+	background: -o-radial-gradient(0px 0px, ellipse, #94001c, #1e0805, #c60035);
+	background: radial-gradient(ellipse at 0px 0px, #94001c, #1e0805, #c60035);
+	-webkit-animation: dark_sky 9s infinite;
+	        animation: dark_sky 9s infinite;	
+	-webkit-animation-direction: alternate;	
+	        animation-direction: alternate;
+}
+
+.sky_and_water:after {
+	top: 237px;
+	height: 458px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#c60035), color-stop(25%, #d80013), color-stop(50%, #62001d));
+	background: -webkit-linear-gradient(top, #c60035 0%, #d80013 25%, #62001d 50%);
+	background: -o-linear-gradient(top, #c60035 0%, #d80013 25%, #62001d 50%);
+	background: linear-gradient(to bottom, #c60035 0%, #d80013 25%, #62001d 50%);
+	-webkit-animation: dark_water 9s infinite;
+	        animation: dark_water 9s infinite;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+
+.container {
+	z-index: 3;
+	width: 496px;	
+	height: 695px;
+	background-image: url(Limb_Acheront.png);	
+}
+
+.charon {
+	z-index: 4;
+  	left: 102px;
+  	top: 276px;
+  	width: 100px;
+  	height: 82px;
+	background-image: url(haron.png);
+	-webkit-animation: swim 8.5s infinite ease-in-out;
+	        animation: swim 8.5s infinite ease-in-out;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+}
+.charon:hover {
+	-webkit-animation-play-state: paused;
+	        animation-play-state: paused;
+}
+
+.climber {
+	z-index: 4;
+  	left: 450px;
+  	top: 210px;
+  	width: 36px;
+  	height: 62px;
+	background-image: url(climbing_man.png);
+	-webkit-transform-origin: 100% 100%;
+	    -ms-transform-origin: 100% 100%;
+	        transform-origin: 100% 100%;
+}
+.hidden_climber {
+	display: block;
+	z-index: 5;
+	left: 450px;
+  	top: 210px;
+	width: 36px;
+	height: 62px;
+}
+.hidden_climber:focus ~ .climber {
+	-webkit-animation: climb_man_climb 8s infinite linear;
+	        animation: climb_man_climb 8s infinite linear;
+}
+
+.hive {
+	z-index: 5;
+  	left: 66px;
+  	top: 392px;
+  	width: 345px;
+  	height: 122px;
+  	background-image: url(bees.png);
+}
+.hive:hover {
+	-webkit-animation: attak 2s infinite linear;
+	        animation: attak 2s infinite linear;
+}
+
+.gonfalonier {
+	z-index: 6;
+  	left: 32px;
+  	top: 340px;
+  	width: 110px;
+  	height: 310px;
+  	background-image: url(flag.png);
+  	-webkit-transform-origin: 68.4% 59.89%;
+  	    -ms-transform-origin: 68.4% 59.89%;
+  	        transform-origin: 68.4% 59.89%;
+}
+.gonfalonier:hover {
+	-webkit-animation: attention 4.5s infinite cubic-bezier(0.47, 0, 0.745, 0.715);
+	        animation: attention 4.5s infinite cubic-bezier(0.47, 0, 0.745, 0.715);
+  	-webkit-animation-direction: alternate;
+  	        animation-direction: alternate;
+}
+
+.gloomy {
+	z-index: 6;
+  	left: 28px;
+  	top: 19px;
+  	width: 455px;
+  	height: 138px;
+  	background-image: url(people.png);
+  	opacity: 0.8;
+}
+.gloomy:hover {
+	-webkit-animation: crying 5s infinite linear;
+	        animation: crying 5s infinite linear;
+}
+
+.meadow {
+	z-index: 6;
+	display: block;
+  	left: 0;
+  	top: 210px;
+  	width: 27px;
+  	height: 50px;	
+  	background-color: #d80013;
+	border-radius: 10px;
+	opacity: 0;
+}
+.meadow:hover {
+	opacity: 0.3;
+}
+
+.exit {
+	z-index: 6;
+	display: block;
+	left: 0;
+	bottom: 0;
+	width: 50px;
+	height: 40px;
+	background-image: url(..//Green_back_sketch.png);
+}
+
+
+/*ANIMATION KEYFRAMES*/
+
+@-webkit-keyframes dark_sky {
+	from {opacity: 0;}
+	to {opacity: 0.5;}
+}
+
+@keyframes dark_sky {
+	from {opacity: 0;}
+	to {opacity: 0.5;}
+}
+
+@-webkit-keyframes dark_water {
+	from {opacity: 0;}
+	to {opacity: 0.4;}
+}
+
+@keyframes dark_water {
+	from {opacity: 0;}
+	to {opacity: 0.4;}
+}
+
+@-webkit-keyframes swim {
+	from {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+	to {-webkit-transform: translate(80px, 40px);transform: translate(80px, 40px);}
+}
+
+@keyframes swim {
+	from {-webkit-transform: translate(0px, 0px);transform: translate(0px, 0px);}
+	to {-webkit-transform: translate(80px, 40px);transform: translate(80px, 40px);}
+}
+
+@-webkit-keyframes attention {
+	from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	to {-webkit-transform: rotate(20deg);transform: rotate(20deg)}
+}
+
+@keyframes attention {
+	from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	to {-webkit-transform: rotate(20deg);transform: rotate(20deg)}
+}
+
+@-webkit-keyframes climb_man_climb {
+	from {-webkit-transform: translate(0px, 0px) rotate(0deg);transform: translate(0px, 0px) rotate(0deg);} /*up*/
+	10% {-webkit-transform: translate(-7px, -5px) rotate(6deg);transform: translate(-7px, -5px) rotate(6deg);}
+	20% {-webkit-transform: translate(0px, -20px) rotate(0deg);transform: translate(0px, -20px) rotate(0deg);}
+	30% {-webkit-transform: translate(7px, -40px) rotate(-4deg);transform: translate(7px, -40px) rotate(-4deg);}
+	40% {-webkit-transform: translate(-5px, -50px) rotate(0deg);transform: translate(-5px, -50px) rotate(0deg);}
+	50% {-webkit-transform: translate(0px, -60px) rotate(4deg);transform: translate(0px, -60px) rotate(4deg);}
+	60% {-webkit-transform: translate(6px, -65px) rotate(-2deg);transform: translate(6px, -65px) rotate(-2deg);}
+	70% {-webkit-transform: translate(0px, -70px) rotate(0deg);transform: translate(0px, -70px) rotate(0deg);}
+	80% {-webkit-transform: translate(-7px, -73px) rotate(3deg);transform: translate(-7px, -73px) rotate(3deg);} /*fall*/
+	85% {-webkit-transform: translate(6px, -2px) rotate(4.5deg);transform: translate(6px, -2px) rotate(4.5deg);}
+	90% {-webkit-transform: translate(6px, -2px) rotate(4.5deg);transform: translate(6px, -2px) rotate(4.5deg);}
+	93% {-webkit-transform: translate(3px, -1px) rotate(2.25deg);transform: translate(3px, -1px) rotate(2.25deg);}
+	96% {-webkit-transform: translate(0px, 0px) rotate(0deg);transform: translate(0px, 0px) rotate(0deg);}
+	to {-webkit-transform: translate(0px, 0px) rotate(0deg);transform: translate(0px, 0px) rotate(0deg);}
+}
+
+@keyframes climb_man_climb {
+	from {-webkit-transform: translate(0px, 0px) rotate(0deg);transform: translate(0px, 0px) rotate(0deg);} /*up*/
+	10% {-webkit-transform: translate(-7px, -5px) rotate(6deg);transform: translate(-7px, -5px) rotate(6deg);}
+	20% {-webkit-transform: translate(0px, -20px) rotate(0deg);transform: translate(0px, -20px) rotate(0deg);}
+	30% {-webkit-transform: translate(7px, -40px) rotate(-4deg);transform: translate(7px, -40px) rotate(-4deg);}
+	40% {-webkit-transform: translate(-5px, -50px) rotate(0deg);transform: translate(-5px, -50px) rotate(0deg);}
+	50% {-webkit-transform: translate(0px, -60px) rotate(4deg);transform: translate(0px, -60px) rotate(4deg);}
+	60% {-webkit-transform: translate(6px, -65px) rotate(-2deg);transform: translate(6px, -65px) rotate(-2deg);}
+	70% {-webkit-transform: translate(0px, -70px) rotate(0deg);transform: translate(0px, -70px) rotate(0deg);}
+	80% {-webkit-transform: translate(-7px, -73px) rotate(3deg);transform: translate(-7px, -73px) rotate(3deg);} /*fall*/
+	85% {-webkit-transform: translate(6px, -2px) rotate(4.5deg);transform: translate(6px, -2px) rotate(4.5deg);}
+	90% {-webkit-transform: translate(6px, -2px) rotate(4.5deg);transform: translate(6px, -2px) rotate(4.5deg);}
+	93% {-webkit-transform: translate(3px, -1px) rotate(2.25deg);transform: translate(3px, -1px) rotate(2.25deg);}
+	96% {-webkit-transform: translate(0px, 0px) rotate(0deg);transform: translate(0px, 0px) rotate(0deg);}
+	to {-webkit-transform: translate(0px, 0px) rotate(0deg);transform: translate(0px, 0px) rotate(0deg);}
+}
+
+@-webkit-keyframes attak {
+	from, to {-webkit-transform: translateY(0px);transform: translateY(0px);}
+	50% {-webkit-transform: translateY(-5px);transform: translateY(-5px);}
+}
+
+@keyframes attak {
+	from, to {-webkit-transform: translateY(0px);transform: translateY(0px);}
+	50% {-webkit-transform: translateY(-5px);transform: translateY(-5px);}
+}
+
+@-webkit-keyframes crying {
+	from, to {-webkit-transform: skewX(0deg);transform: skewX(0deg);}
+	5%, 95% {-webkit-transform: skewX(2deg);transform: skewX(2deg);}
+	50% {-webkit-transform: skewX(20deg);transform: skewX(20deg);}
+}
+
+@keyframes crying {
+	from, to {-webkit-transform: skewX(0deg);transform: skewX(0deg);}
+	5%, 95% {-webkit-transform: skewX(2deg);transform: skewX(2deg);}
+	50% {-webkit-transform: skewX(20deg);transform: skewX(20deg);}
+}
