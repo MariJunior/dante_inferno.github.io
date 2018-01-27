@@ -7,3 +7,4 @@ In this version of the project, the code is written for:
 - the gates of hell (hellgate.html)
 - the first circle of hell - Limb (Limb.html and hgol.html)
 - the second circle of hell (Minos.html)
+More complete information about the project and its functionality can be found in the file "Документация к проекту.docx"
